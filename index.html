@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UiTM Bus System</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #5DADE2;
+      font-family: 'Comic Sans MS', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .title {
+      font-size: 28px;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #333;
+    }
+
+    .bus-img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">UITM BUS SYSTEM</div>
+    <img src="bus.png" alt="Bus Image" class="bus-img">
+    
+    <button class="btn" onclick="startApp()">LETS STARTED</button>
+<script>
+  function startApp() {
+    alert("No more PDFs! Track Buses Live!");
+    window.location.href = "select-bus.html";
+  }
+</script>
+
+    
+  </div>
+</body>
+</html>

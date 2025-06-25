@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delay Info: Bus G</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffdddd;
+      font-family: 'Comic Sans MS', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #fff;
+      color: #333;
+      border-radius: 30px;
+      margin: 30px 0;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #c62828;
+    }
+
+    .delay-entry {
+      background-color: #ffeaea;
+      border-left: 6px solid #e53935;
+      border-radius: 15px;
+      padding: 12px;
+      margin-bottom: 12px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .delay-entry strong {
+      color: #d32f2f;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background-color: #ffffff;
+      border: none;
+      border-radius: 15px;
+      padding: 10px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn:hover {
+      background-color: #f8f8f8;
+    }
+
+    .emoji {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚨 Bus E - Delay Notification History</h1>
+
+    <div class="buttons">
+      <button class="btn" onclick="window.location.href='busE.html'">⬅️ Back</button>
+      <button class="btn" onclick="window.location.href='index.html'"><span class="emoji">🏠</span> Home</button>
+    </div>
+  </div>
+</body>
+</html>

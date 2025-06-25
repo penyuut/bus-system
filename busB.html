@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Locations: Bus B</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f6f7c4;
+      font-family: 'Comic Sans MS', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-container {
+      background-color: #000000;
+      color: white;
+      border-radius: 30px;
+      width: 90%;
+      max-width: 400px;
+      margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .map-container {
+      position: relative;
+      margin: 10px auto;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .map-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .map-note {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 12px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .updated {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .route-box {
+  background-color: #f6f7c4;
+  color: black;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+
+    .route-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .route-data {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .bottom-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .home-btn, .help-btn, .info-btn {
+      background: #ffffff;
+      border: none;
+      border-radius: 15px;
+      padding: 8px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+    }
+
+    .help-btn {
+      font-size: 12px;
+      font-weight: bold;
+      gap: 5px;
+    }
+
+    .help-btn:hover, .home-btn:hover {
+      background-color: #f2f2f2;
+    }
+
+.popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: #fff8e1;
+      border: 2px solid #ff0000;
+      border-radius: 15px;
+      padding: 20px;
+      width: 80%;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      text-align: center;
+      z-index: 999;
+      font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    .popup p {
+      color: #d00000;
+      font-weight: bold;
+    }
+
+    .popup button {
+      margin-top: 10px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1>LOCATIONS : BUS B</h1>
+
+    <div class="map-container">
+      <!-- Replace with GIF or video later -->
+      <img src="bus-map.png" alt="Bus GPS Animation">
+    </div>
+
+    <div class="updated">LAST UPDATED : 1 MIN AGO</div>
+
+    <!-- Route 1 -->
+    <div class="route-box">
+      <div class="route-header">
+        <span>DEPARTURE</span>
+        <span>ARRIVAL</span>
+      </div>
+      <div class="route-data">
+        <span>8:00 AM</span>
+        <span>8:20 AM</span>
+      </div>
+      <div class="route-data">
+        <span>Hentian Seroja</span>
+        <span>Hentian FSKM</span>
+      </div>
+    </div>
+
+    <!-- Route 2 -->
+    <div class="route-box">
+      <div class="route-header">
+        <span>DEPARTURE</span>
+        <span>ARRIVAL</span>
+      </div>
+      <div class="route-data">
+        <span>8:20 AM</span>
+        <span>8:35 AM</span>
+      </div>
+      <div class="route-data">
+        <span>Hentian FSKM</span>
+        <span>Hentian FKPM (MASCOM)</span>
+      </div>
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div class="bottom-buttons">
+      <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
+      <button class="info-btn" onclick="window.location.href='delay-info-busB.html'">ℹ️</button>
+      <button class="help-btn" onclick="window.location.href='help.html'">
+        💬 HELP
+      </button>
+    </div>
+
+     <!-- Delay Popup -->
+    <div id="delay-popup" style="display: none;" class="popup">
+      <p><strong>⚠️Bus to Hentian Seroja delayed⚠️
+New ETA: 8.00 AM</strong></p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+  </div>
+
+<!-- JavaScript at the bottom -->
+  <script>
+    const isBusDelayed = true;
+
+    function closePopup() {
+      document.getElementById("delay-popup").style.display = "none";
+    }
+
+    window.onload = function () {
+      if (isBusDelayed) {
+        document.getElementById("delay-popup").style.display = "block";
+      }
+    };
+  </script>
+
+
+</body>
+</html>

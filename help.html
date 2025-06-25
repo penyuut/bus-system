@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help Page</title>
+  <style>
+    body {
+      background-color: #4a90e2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: #f1f1f1;
+      width: 300px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .qr-block {
+      margin: 30px 0;
+      position: relative;
+    }
+
+    .qr-block img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .arrow {
+      position: absolute;
+      left: -20px;
+      top: 40px;
+      font-size: 30px;
+      transform: rotate(-45deg);
+    }
+
+    .label {
+      margin-top: 10px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #357abd;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Complaint QR -->
+    <div class="qr-block">
+      <!-- Replace the src with your actual image path -->
+      <img src="complaint_qr.png" alt="Complaint QR Code">
+      <div class="label">Complaint here</div>
+    </div>
+
+    <!-- Feedback QR -->
+    <div class="qr-block">
+      <!-- Replace the src with your actual image path -->
+      <img src="feedback_qr.png" alt="Feedback QR Code">
+      <div class="label">Feedback</div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="button">BACK</a>
+  </div>
+
+</body>
+</html>

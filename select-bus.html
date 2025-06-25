@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Bus</title>
+  <style>
+    body {
+      background-color: #5DADE2;
+      font-family: 'Comic Sans MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #f9f9f9;
+      border-radius: 30px;
+      margin-top: 30px;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .bus-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: 2px solid #333;
+      cursor: pointer;
+    }
+
+    .bus-a { background-color: #e8c0cb; }
+    .bus-b { background-color: #f8f5a6; }
+    .bus-c { background-color: #ff8f8f; }
+    .bus-d { background-color: #a8ddd8; }
+    .bus-e { background-color: #b5a9f0; }
+    .bus-f { background-color: #a6ddff; }
+    .bus-g { background-color: #f7c78c; }
+
+    .home-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .home-btn img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .pdf-link {
+      display: block;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #000;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .pdf-link:hover {
+      color: #444;
+    }
+
+.home-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 5px 15px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #eeeeee;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CHOOSE THE BUS</h1>
+<button class="bus-button bus-a" onclick="window.location.href='busA.html'">BUS A</button>
+    <button class="bus-button bus-b" onclick="window.location.href='busB.html'">BUS B</button>
+<button class="bus-button bus-c" onclick="window.location.href='busC.html'">BUS C</button>
+<button class="bus-button bus-d" onclick="window.location.href='busD.html'">BUS D</button>
+<button class="bus-button bus-e" onclick="window.location.href='busE.html'">BUS E</button>
+<button class="bus-button bus-f" onclick="window.location.href='busF.html'">BUS F</button>
+<button class="bus-button bus-g" onclick="window.location.href='busG.html'">BUS G</button>
+
+
+    <a class="pdf-link" href="operasi-bus.pdf">WONDERING WHERE THE BUS GOES? CLICK HERE!</a>
+  </div>
+
+  <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
+
+
+</body>
+</html>
