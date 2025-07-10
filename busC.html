@@ -44,16 +44,6 @@
       border-radius: 15px;
     }
 
-    .map-note {
-      position: absolute;
-      top: 5px;
-      left: 10px;
-      background: rgba(255, 255, 255, 0.7);
-      font-size: 12px;
-      font-weight: bold;
-      color: red;
-    }
-
     .updated {
       margin-top: 10px;
       font-size: 12px;
@@ -87,9 +77,10 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .home-btn, .help-btn, .info-btn {
+    .home-btn, .help-btn, .info-btn, .radio-btn {
       background: #ffffff;
       border: none;
       border-radius: 15px;
@@ -107,8 +98,61 @@
       gap: 5px;
     }
 
-    .help-btn:hover, .home-btn:hover {
+    .help-btn:hover, .home-btn:hover, .info-btn:hover, .radio-btn:hover {
       background-color: #f2f2f2;
+    }
+
+    /* Modal for Radio */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #eee;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .channel {
+      background-color: #fff;
+      color: #000;
+      border-radius: 15px;
+      padding: 10px;
+      margin: 10px 0;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .channel:hover {
+      background-color: #ddd;
+    }
+
+    .close-btn {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    audio {
+      margin-top: 15px;
+      width: 100%;
     }
   </style>
 </head>
@@ -117,7 +161,7 @@
     <h1>LOCATIONS : BUS C</h1>
 
     <div class="map-container">
-      <img src="bus-map.png" alt="Bus GPS Animation">
+      <img src="bus-map.PNG" alt="Bus GPS Animation">
     </div>
 
     <div class="updated">LAST UPDATED : 1 MIN AGO</div>
@@ -158,10 +202,42 @@
     <div class="bottom-buttons">
       <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
       <button class="info-btn" onclick="window.location.href='delay-info-busC.html'">ℹ️</button>
-      <button class="help-btn" onclick="window.location.href='help.html'">
-        💬 HELP
-      </button>
+      <button class="help-btn" onclick="window.location.href='help.html'">💬 HELP</button>
+      <button class="radio-btn" onclick="openModal()" title="Radio Channels">🔊</button>
     </div>
   </div>
+
+  <!-- Modal for Radio Channels -->
+  <div id="radioModal" class="modal">
+    <div class="modal-content">
+      <h2>📻 Radio Channels</h2>
+
+      <div class="channel" onclick="playChannel('radio1.mp3')">🎶 Hot FM</div>
+      <div class="channel" onclick="playChannel('radio2.mp3')">🌧️ Era</div>
+      <div class="channel" onclick="playChannel('radio3.mp3')">🔥 Hitz FM</div>
+      <div class="channel" onclick="playChannel('radio4.mp3')">🌈 Sinar</div>
+      <div class="channel" onclick="playChannel('radio5.mp3')">✨ Suria</div>
+
+      <audio id="player" controls></audio>
+
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('radioModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('radioModal').style.display = 'none';
+    }
+
+    function playChannel(src) {
+      const audio = document.getElementById('player');
+      audio.src = src;
+      audio.play();
+    }
+  </script>
 </body>
 </html>
